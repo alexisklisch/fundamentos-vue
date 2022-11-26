@@ -2,20 +2,19 @@
 const vm = Vue.createApp({
   data() {
     return {
-      text: 'Hola a todos',
-      elementHtml: '<h2>Soy Alexis</h2>'
+      imgSrc: "https://images.unsplash.com/photo-1668622355716-1027018409fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=20",
+      altText: "Imagen de un pibe re loco",
+      attr: 'alt'
     }
   },
-  // Podemos generar html desde JS
-  // Aquí habilitamos por ejemplo las directivas de Vue
-  template: `<h1 v-text="text"></h1>
-  <div v-html="elementHtml"></div>
-  <p>Hola mi rey</p>
+  // Para generar atributos que cambian tenemos que usar template
+  template: `
+    <img v-bind:src="imgSrc" v-bind:alt="altText"/>
+    <p>Puedo cambiar el atributo reactivamente con una variable</p>
+    <img v-bind:[attr]="imgSrc"/>
   `
 }).mount('#app')
 
 /*
-v-text permite agregar texto al elemento sin escribirlo dentro de la etiqueta
-v-once renderiza una sola vez. Si lo alteramos post ejecución, no cambiará
-v-html da la instrucción de leer el string como HTML, sino lo lee como plano
+v-bind sirve para asignar valores atributos reactivos. Sólo funciona en template.
 */
