@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atributos reactivos</title>
+  <title>Eventos de usuario</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <form>
+      <button type="button" @click="counter--">Decrementar</button>
+      <button type="submit" v-on:click.prevent=increment>Incrementar</button>
+    </form>
+    <p>El valor es: <b>{{counter}}</b></p>
+  </div>
   <script src="https://unpkg.com/vue@next"></script>
   <script src="./js/index.js"></script>
 </body>
