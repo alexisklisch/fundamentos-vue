@@ -1,17 +1,20 @@
 const vm = Vue.createApp({
   data() {
     return {
-      primerNombre: "Alexis",
-      apellido: "Fleitas Klisch",
-      now: new Date
+      puerta: 'Puerta cerrada',
+      abierto: false
+    }
+  },
+  watch: {
+    abierto(value) {
+      value
+        ? this.puerta = "Puerta abierta"
+        : this.puerta = "Puerta cerrada"
     }
   },
   computed: {
-    nombreCompleto() {
-      return `${this.primerNombre} ${this.apellido}`
-    },
-    fecha() {
-      return this.now.toLocaleDateString()
+    opcion() {
+      return this.abierto ? 'Cerrar' : 'Abrir'
     }
   }
 }).mount('#app')
