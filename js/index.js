@@ -1,15 +1,13 @@
-const initialValue = 0
-
 const vm = Vue.createApp({
   data() {
     return {
-      counter: initialValue
+      src: 'Mi link'
     }
   },
-  methods:{
-    increment() {
-      this.counter++
-    }
-  }
+  template: `
+    <p>{{src}}</p>
+    <input v-model="src"/>
+    <img :src="src" />
+  `
 }).mount('#app')
 

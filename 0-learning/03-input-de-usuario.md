@@ -63,3 +63,45 @@ Aunque en el curso digan lo contrario (quizás éste feature funciona desde la v
     <button type="button" @click="increment">{{initialValue}}</button>
   </div>
 ```
+
+## Inputs reactivos
+
+```js
+const vm = Vue.createApp({
+  data() {
+    return {
+      text: 'La vida es bella',
+      src: 'Mi link'
+    }
+  },
+  methods: {
+    cambio(e){
+      this.src = e.target.value
+    }
+  },
+  // Los eventos podemos reemplazar por @ y los v-bind por :
+  template: `
+    <p>{{text}}</p>
+    <input @input="cambio" :value="src"/>
+    <img :src="src" />
+  `
+}).mount('#app')
+```
+
+Puedo generar lo mismo con una directiva que trabaja en ambos sentidos: v-model
+
+```js
+const vm = Vue.createApp({
+  data() {
+    return {
+      src: 'Mi link'
+    }
+  },
+  // Ya no necesito métodos
+  template: `
+    <p>{{src}}</p>
+    <input v-model="src"/>
+    <img :src="src" />
+  `
+}).mount('#app')
+```
