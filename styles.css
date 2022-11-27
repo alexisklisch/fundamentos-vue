@@ -1,0 +1,36 @@
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0; padding: 0;
+}
+
+.app {
+  align-items: center;
+  background-color: #f2d1cd;
+  display: flex;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.app h1{
+  color: red;
+  font-size: 2.4rem;
+}
+
+.app button{
+  background-color: red;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding: 12px 6px;
+  min-width: 320px;
+}

@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watchers</title>
+  <title>Estilos reactivos</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="app">
-    <h1>{{puerta}}</h1>
-    <button @click="abierto = !abierto">{{opcion}}</button>
+    <form class="app" :style="appStyle">
+      <h1 :style="titleStyle">{{puerta}}</h1>
+      <button type="button" @click="abierto = !abierto" :style="btnStyle">{{opcion}}</button>
+    </form>
   </div>
   <script src="https://unpkg.com/vue@next"></script>
   <script src="./js/index.js"></script>
